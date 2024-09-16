@@ -11,6 +11,7 @@ def skalar_souc(vec1: list, vec2: list):
         vec_soucin += vec1[i] * vec2[i]
     return vec_soucin
 
+#skalarni soucin s NumPy
 def skalar_souc_np(vec1: list, vec2: list):
     if len(vec1) != len(vec2):
         raise Exception('Vektory nemají stejnou velikost')
