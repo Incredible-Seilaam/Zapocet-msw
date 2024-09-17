@@ -26,7 +26,7 @@ def vektorovy_soucin_np(vec1: list, vec2: list):
     return vec_vysledek.tolist()
 
 def mereni_casu(fce, vec1, vec2):
-    poc_cas = time.time()
+    poc_cas = time.perf_counter() #muzeme pouzit time.time(), ale perf_counter je presnejsi
     result = fce(vec1, vec2)
     konec_cas = time.time()
     cas_trvani = konec_cas - poc_cas

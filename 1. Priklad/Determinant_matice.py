@@ -18,7 +18,7 @@ def determinant(matice):
 
     det = 0
     for i in range(len(matice)):
-        minor = np.delete(matice, 0, axis=0)
+        minor = np.delete(matice, 0, axis=0)    #minorní determinant
         minor = np.delete(minor, i, axis=1)
         cofactor = (-1) ** i * matice[0, i] * determinant(minor)
         det += cofactor
@@ -31,9 +31,9 @@ def determinant_scipy(matice):
     return scipy.linalg.det(matice)
 
 def mereni_casu(fce, matice):
-    poc_cas = time.process_time()
+    poc_cas = time.perf_counter()
     vysledek = fce(matice)
-    konec_cas = time.process_time()
+    konec_cas = time.perf_counter()
     cas_trvani = konec_cas - poc_cas
     return vysledek, cas_trvani
 
